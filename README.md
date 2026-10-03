@@ -1,6 +1,6 @@
 # Sentinel-1 COG Patcher
 
-A Python script that patches the `manifest.safe` of a Sentinel-1 **COG_SAFE** product (Cloud Optimized GeoTIFF, distributed by the Copernicus Data Space Ecosystem so that ESA SNAP reads the correct processor (IPF) version.
+A Python script that patches the `manifest.safe` of a Sentinel-1 **COG_SAFE** product (Cloud Optimized GeoTIFF), distributed by the Copernicus Data Space Ecosystem so that ESA SNAP reads the correct processor (IPF) version.
 
 Without the patch, SNAP misreads the IPF version of every COG_SAFE product as **1.0**. As a result, some of the SNAP operators (like Remove-GRD-Border-Noise) fails, calibration shows a warning, and thermal noise removal runs code meant for pre-2018 data.
 
