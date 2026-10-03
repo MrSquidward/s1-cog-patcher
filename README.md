@@ -1,4 +1,4 @@
-# Fix SNAP processing of Sentinel-1 COG_SAFE products
+# Sentinel-1 COG Patcher
 
 A Python script that patches the `manifest.safe` of a Sentinel-1 **COG_SAFE** product (Cloud Optimized GeoTIFF, distributed by the Copernicus Data Space Ecosystem so that ESA SNAP reads the correct processor (IPF) version.
 
@@ -9,10 +9,10 @@ Without the patch, SNAP misreads the IPF version of every COG_SAFE product as **
 Give the script the product's `.SAFE` folder or its `manifest.safe` file:
 
 ```bash
-python3 patch_cog_manifest_single.py S1C_IW_GRDH_1SDV_20260306T000637_20260306T000702_006636_00D653_EAE1_COG.SAFE
+python3 s1-cog-patcher.py S1C_IW_GRDH_1SDV_20260306T000637_20260306T000702_006636_00D653_EAE1_COG.SAFE
 ```
 
-The script is safe to run more than once. 
+The script is safe to run more than once. The original `manifest.safe` is copied and saved as `manifest.safe.orig`. 
 
 ## The problem
 
@@ -73,3 +73,6 @@ To restore the original manifest:
 ```bash
 mv PRODUCT.SAFE/manifest.safe.orig PRODUCT.SAFE/manifest.safe
 ```
+
+## Issues
+If you encounter any problems, feel free to reach out or open an issue.

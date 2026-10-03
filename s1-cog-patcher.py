@@ -45,4 +45,4 @@ if not backup.exists():
     shutil.copy2(manifest, backup)
 manifest.write_text(text[:cog.start()] + new_tag + text[cog.end():], encoding="utf-8")
 print(f"Patched: COGifier {old.group(1) if old else '(none)'} -> IPF {ipf_version}")
-print(f"Backup:  {backup}")
+print(f"Backup: {backup}")
